@@ -88,6 +88,13 @@ class FuzzySystem:
 
         return best_output
 
+def main(regulator_json: str, temperature_json: str, mapping_json: str):
+    fuzzy_system = FuzzySystem(regulator_json, temperature_json, mapping_json)
+
+    print(f"Temperature: 19.0, Output: {round(fuzzy_system.calculate_output(19.0), 2)}")
+    print(f"Temperature: 23.0, Output: {round(fuzzy_system.calculate_output(23.0), 2)}")
+    print(f"Temperature: 10.0, Output: {round(fuzzy_system.calculate_output(10.0), 2)}")
+
 if __name__ == "__main__":
     regulator_json = '''{
         "регуляторы": [
@@ -111,8 +118,4 @@ if __name__ == "__main__":
         ["жарко", "низкий"]
     ]'''
 
-    fuzzy_system = FuzzySystem(regulator_json, temperature_json, mapping_json)
-
-    print(f"Temperature: 19.0, Output: {round(fuzzy_system.calculate_output(19.0), 2)}")
-    print(f"Temperature: 23.0, Output: {round(fuzzy_system.calculate_output(23.0), 2)}")
-    print(f"Temperature: 10.0, Output: {round(fuzzy_system.calculate_output(10.0), 2)}")
+    main(regulator_json, temperature_json, mapping_json)

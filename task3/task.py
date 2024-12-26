@@ -91,6 +91,10 @@ class GraphProcessor:
         entropy = self.calculate_entropy(extensional_lengths)
         print(f"Энтропия графа: {entropy}")
 
+def main(input_json: str):
+    processor = GraphProcessor()
+    processor.execute(input_json)
+
 if __name__ == "__main__":
     example_tree = """{
         "1": {
@@ -102,5 +106,5 @@ if __name__ == "__main__":
             }
         }
     }"""
-    processor = GraphProcessor()
-    processor.execute(example_tree)
+    main(example_tree)
+    

@@ -81,6 +81,10 @@ class GraphProcessor:
         for node in sorted(node_characteristics.keys(), key=lambda x: int(x)):
             print(f"{node}: {node_characteristics[node]}")
 
+def main(input_json: str):
+    processor = GraphProcessor()
+    processor.execute(input_json)
+
 if __name__ == "__main__":
     example_tree = """{
         "1": {
@@ -92,5 +96,5 @@ if __name__ == "__main__":
             }
         }
     }"""
-    processor = GraphProcessor()
-    processor.execute(example_tree)
+    main(example_tree)
+    
