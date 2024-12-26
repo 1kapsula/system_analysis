@@ -44,8 +44,8 @@ def calculate_entropy_metrics():
         round(mutual_information, 2)
     ]
 
-def main():
-    print(calculate_entropy_metrics())
+def task():
+    return calculate_entropy_metrics()
 
 if __name__ == "__main__":
-    main()
+    print(task())
